@@ -1,0 +1,161 @@
+#Python-Practicals
+#These are the codes of Python[PIP] Practicals of 4th Sem 
+------------------------------------------------------------
+
+PRACTICAL 2
+[a]
+# Prepared by: Pruthuraj Suthar(20CS092)
+# Aim: To check whether a given key already exists in a dictionary.
+
+
+d = {1: "Pruthu", 2: "Priya", 3: "Ram", 4: "Sahaj", 5: "Krupa", 6: "Dev"}
+def is_key_present(x):
+  if x in d:
+    print('Key is present in the dictionary. The value is:')
+    print(d[x])
+  else:
+    print('Key is not present in the dictionary')
+    
+key = int(input("Enter the key to find: "))
+is_key_present(key)
+
+# Aim: Python script to merge two Python dictionaries.
+
+def Merge(dict1, dict2):
+    res = {**dict1, **dict2}
+    return res
+     
+# Driver code
+dict1 = {'a': 100, 'b':200}
+dict2 = {'c': 40,'d': 60}
+dict3 = Merge(dict1, dict2)
+print(dict3)
+
+# Aim: Python program to sum all the items in a dictionary.
+
+def Sum(dict):
+     
+     sum = 0
+     for i in dict.values():
+           sum = sum + i
+      
+     return sum
+ 
+# Driver Function
+dict = {'a': 100, 'b':200, 'c':300}
+print("Sum =", Sum(dict))
+
+# Aim: Python script to add a key to a dictionary.
+
+
+d = {1: "Pruthu", 2: "Priya", 3: "Ram", 4: "Sahaj", 5: "Krupa", 6: "Dev"}
+key=input("Enter the key: ")
+value=input("Enter the value: ")
+d[key]=value
+print("Updated Dictionary: ",d)
+
+# Aim: Python script to concatenate dictionaries to create a new one
+
+dic1={1:10, 2:20}
+
+dic2={3:30, 4:40}
+
+dic3={5:50,6:60}
+
+dic1.update(dic2)
+dic1.update(dic3)
+print("Concatenated Dictionary =", dic1)
+
+[b]
+
+# Prepared by: Pruthuraj Suthar(20CS092)
+from collections import Counter 
+#Aim: a. Write a Python program to add member(s) in a set and clear a set
+colors = set()
+print("Add single element:")
+colors.add("Red")
+print(colors)
+print("Add multiple items:")
+colors.update(["Blue", "Green"])
+print(colors)
+colors.clear()
+print(colors)
+
+#b. Write a Python program to remove an item from a set if it is present in the set.
+num = set([0, 1, 2, 3, 4, 5])
+print(num)
+temp=int(input("Enter element to remove :"))
+if temp in num:
+    num.discard(temp)
+    print("Element removed successfully")
+    print(num)
+    
+else:
+    print("Element not found in Set!")
+    
+#c. Write a Python program to create an intersection, Union, difference of sets.
+A = {0, 2, 4, 6, 8};
+B = {1, 2, 3, 4, 5};
+# union
+print("Union :", A | B)
+# intersection
+print("Intersection :", A & B)
+# difference
+print("Difference :", A - B) 
+# symmetric difference
+print("Symmetric difference :", A ^ B)
+
+#d. Write a Python program to find maximum and the minimum value in a set.
+print("Maximum :", max(num))
+print("Minimum :", min(num))
+
+#e. Write a Python program to find the most common elements and their counts from list, tuple, dictionary.
+list = [9, 4, 5, 4, 4, 5, 9, 5, 4]
+# printing original list
+print ("Original list : " + str(list))
+# using max() + set() to get most frequent element
+res = max(set(list), key = list.count)
+      
+# printing result
+print ("Most frequent number is : " + str(res)+"\nThe count is : " , list.count(res))
+
+
+tuple=(1,67,45,78,1,45,1) 
+print ("Original tuple : " + str(tuple))
+res = max(set(tuple), key = tuple.count)
+print ("Most frequent number is : " + str(res)+"\nThe count is : " , tuple.count(res))
+
+dict={1:10, 2:20,3:10}
+print ("Original Dictionary : " + str(dict))
+value, count = Counter(dict.values()).most_common(1)[0]
+print ("Most frequent number is : " , value,"\nThe count is : " , count)
+  
+
+[c]
+
+# Prepared by: Pruthuraj Suthar(20CS092)
+
+# Aim: a. Write a Python program to create a tuple with different data types.
+tuple= ("tuple", False, 3.2, 1,)
+print(tuple)
+
+
+#b. Write a Python program to create a tuple with numbers and print one item.
+tuple2=(1,67,45,78,90,145)
+print(tuple2[4])
+
+
+#c. Write a Python program to add an item in a tuple.
+ele=input("Enter item to add in tuple: ")
+tuple=tuple+ (ele,)
+print(tuple)
+
+#d. Write a Python program to convert a tuple to a string.
+tup = ('C', 'S', 'P', 'I', 'T')
+str = ''
+for i in tup:
+    str = str + i
+print(str)
+
+#e. Write a Python program to find the length of a tuple.
+print(len(tup))
