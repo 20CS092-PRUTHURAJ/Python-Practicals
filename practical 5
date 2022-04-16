@@ -1,0 +1,13 @@
+def swap_case(s):                         #defining a function called swap case
+    result = []                           #initializing a list to store our string, so we can iterate through it and compare each letter
+    for letter in s:                      #for loop to iteraate through the string
+        if letter == letter.lower():      #Checking if given letter is lowercase or uppercase 
+            result.append(letter.upper()) 
+        elif letter == letter.upper():
+            result.append(letter.lower())
+        else:                             #else condition appends the letter as it is if its not of string datatype
+            result.append(letter)
+    return ''.join(result)                #returning the result
+s = input("Enter your string here : ")    #taking input from user
+result = swap_case(s)
+print(result)                             #printing the result
