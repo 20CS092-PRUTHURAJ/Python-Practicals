@@ -1,0 +1,12 @@
+Total_test_cases = int(input())    #input of total test cases
+for i in range(Total_test_cases):  #Iterating through each test case
+    n = input()                    #Asking user for input of words
+    l = len(n)                     #Storing the length of the word
+    if l % 2 == 0:                 #Checking whether the word has even or odd number of letters
+        b, c = n[:l//2], n[l//2:]  #Checking for lapindrome using floor division
+    else:
+        b, c = n[:l//2], n[l//2+1:]
+    if sorted(b) == sorted(c):
+        print("YES")               #Printing yes if its a lapindrome
+    else:
+        print("NO")                #Printing no if its not a lapindrome
