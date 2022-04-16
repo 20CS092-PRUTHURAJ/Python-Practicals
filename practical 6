@@ -1,0 +1,14 @@
+total_inputs = int(input())            #taking input from user for total number of test cases
+counter_dict = {}                      #dictionary to store unrepeated words
+words_list = []                        #list to store words from user input
+
+for i in range(total_inputs):          #for loop to iterate through all test cases
+  word = input()                       #input from user for words
+  words_list.append(word)
+  if word in counter_dict:
+    counter_dict[word] += 1
+  else:
+    counter_dict[word] = 1
+    
+print(len(counter_dict))            #printing length of dictionary to show total unrepeated words 
+print(' '.join([str(counter_dict[word]) for word in counter_dict])) 
